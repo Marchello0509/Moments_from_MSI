@@ -2,10 +2,16 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: './index.js',
+  entry: {
+    inedx: './index.js',
+    main: './main.js',
+    welcome: './welcome.js',
+    reg: './reg.js',
+    profile: './profile.js',
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
   },
   module: {
     rules: [

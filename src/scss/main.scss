@@ -1,0 +1,287 @@
+@mixin FlexElement($justify, $align) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin ForBlocks ($justify) {
+    display: flex;
+    justify-content: $justify;
+}
+
+.header {
+    width: 100%;
+    height: 83px;
+    border-bottom: 1px solid #000;
+    &_head {
+        @include FlexElement(space-between, center);
+        margin: 0 auto;
+        width: 1273px;
+        height: 38px;    
+        &_a {
+            text-decoration: none;
+            &_logo {
+                margin-top: 40px;
+                display: flex; 
+                &_p {
+                    color: #000;
+                    font-family: Oxanium;
+                    font-size: 30px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;          
+                }
+            }
+        }
+        &_nav {
+            width: 200px;
+            height: 13px;
+            margin-top: 30px;
+            margin-left: 50px;
+            &_ul {
+                @include FlexElement(flex-start, center);
+                column-gap: 10px;
+                &_li {
+                    list-style: none;
+                    &_a {
+                        color: #000;
+                        font-family: Oxanium;
+                        font-size: 20px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: normal;
+                        text-decoration: none;
+                        transition-duration: 0.6s;
+                        border-bottom: 1px solid #00000000;
+                        &:hover {
+                            transition-duration: 0.6s;
+                            border-bottom: 1px solid #000000;
+                        }
+                    }
+                }
+            }         
+        }
+        &_forinput {
+            margin-top: 35px;
+            @include FlexElement(center, center);
+            width: 400px;
+            height: 55px;
+            border-radius: 38px;
+            border: 0.5px solid #000;
+            column-gap: 60px;
+            &_input {
+                background: none;
+                border: none;
+                height: 100%;
+                outline: none;
+                color: #000;
+                font-family: Oxanium;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+            }
+            &_btn {
+                border: none;
+                background: none;
+                cursor: pointer;
+            }
+        }
+        &_btns {
+            @include FlexElement(center, center);
+            width: 297px;
+            height: 64px;
+            text-decoration: none;
+            margin-top: 40px;
+            column-gap: 12px;
+            &_username {
+                color: #000;
+                font-family: Oxanium;
+                font-size: 32px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+            }
+        }
+    }
+}
+.main {
+    @include FlexElement(flex-start, center);
+    column-gap: 300px;
+    &_block1 {
+        border-right: 1px solid #555;
+        width: 322px;
+        height: 100vh;
+        &_fora {
+            @include ForBlocks(center);
+            &_ablock {
+                width: 178px;
+                height: 258px;       
+                margin-top: 15px;
+                &_a {
+                    color: #000;
+                    font-family: Oxanium;
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    text-decoration: none;
+                }
+                &_a1 {
+                    color: #000;
+                    font-family: Oxanium;
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    text-decoration: none;
+                }
+                &_a2 {
+                    color: #000;
+                    font-family: Oxanium;
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    text-decoration: none;
+                }
+                &_a3 {
+                    color: #000;
+                    font-family: Oxanium;
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    text-decoration: none;
+                }
+                &_a4 {
+                    color: #000;
+                    font-family: Oxanium;
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    &_block2 {
+        width: 871px;
+        height: 100vh;     
+        overflow-y: scroll;
+        &_forptd {
+            display: flex;
+            margin-top: 10px;
+            margin-left: 15px;
+            &_p {
+                color: #000;
+                font-family: Nunito;
+                font-size: 36px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;           
+            }
+            &_btn {
+                background: none;
+                border: none;
+                cursor: pointer;
+                margin-top: 10px;
+                margin-left: 5px;
+            }
+        }
+        &_forms {
+            @include ForBlocks(center);
+            margin-top: 30px;
+            &_ms {
+                width: 812px;
+                height: 280px;     
+                border: 1px solid #00482E;
+                background: #FFF; 
+                &_user {
+                    display: flex;
+                    column-gap: 5px;
+                    margin-left: 30px;
+                    margin-top: 15px;
+                    &_nickname {
+                        margin-top: 15px;
+                        color: #000;
+                        font-family: Oxanium;
+                        font-size: 32px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: normal;       
+                    }
+                }
+                &_forcom {
+                    @include ForBlocks(center);
+                    margin-top: 20px;
+                    &_com {
+                        width: 743px;
+                        height: 127px;  
+                        &_text {
+                            color: #000;
+                            font-family: Oxanium;
+                            font-size: 16px;
+                            font-style: normal;
+                            font-weight: 500;
+                            line-height: normal;                          
+                        }
+                    }      
+                }
+                &_forlikes {
+                    @include ForBlocks(flex-end);
+                    margin-top: 12px;
+                    &_likes {
+                        @include FlexElement(center, center);
+                        width: 200px;
+                        height: 35px;   
+                        column-gap: 10px;     
+                        &_dislp {
+                            color: #F00;
+                            font-family: Oxanium;
+                            font-size: 15px;
+                            font-style: normal;
+                            font-weight: 500;
+                            line-height: normal;          
+                        }
+                        &_dislbtn {
+                            border-radius: 3px;
+                            border: 1px solid #480808;
+                            background: #FFF;            
+                            width: 35px;
+                            height: 35px; 
+                            cursor: pointer;
+                            transition-duration: 0.6s;
+                            &:hover {
+                                transition-duration: 0.6s;   
+                                border: 1px solid rgb(145, 1, 1);      
+                            }
+                        }
+                        &_likep {
+                            color: #00482E;
+                            font-family: Oxanium;
+                            font-size: 15px;
+                            font-style: normal;
+                            font-weight: 500;
+                            line-height: normal;          
+                        }
+                        &_likebtn {
+                            border-radius: 3px;
+                            border: 1px solid #00482E;
+                            background: #FFF;           
+                            width: 35px;
+                            height: 35px; 
+                            cursor: pointer;
+                            transition-duration: 0.6s;
+                            &:hover {
+                                transition-duration: 0.6s;   
+                                border: 1px solid #02613e;     
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
