@@ -4,14 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main</title>
-
+    <link rel="apple-touch-icon" sizes="180x180" href="../src/favicMSI/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../src/favicMSI/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../src/favicMSI/favicon-16x16.png">
+    <link rel="manifest" href="../src/favicMSI/site.webmanifest">
+    <link rel="mask-icon" href="../src/favicMSI/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Oxanium:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Overpass+Mono:wght@300;400;500;600;700&family=Oxanium:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <div id="modal" class="modal">
+        <div class="modal_content">
+            <div class="modal_content_forbtnClose">
+                <button id="btnClose" class="modal_content_forbtnClose_btnClose">
+                    <svg width="46.000000" height="46.000000" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <defs>
+                            <clipPath id="clip11_254">
+                                <rect id="cancel_svgrepo.com" width="46.000000" height="46.000000" fill="white" fill-opacity="0"/>
+                            </clipPath>
+                        </defs>
+                        <rect id="cancel_svgrepo.com" width="46.000000" height="46.000000" fill="#FFFFFF" fill-opacity="0"/>
+                        <g clip-path="url(#clip11_254)">
+                            <path id="Close" d="M37.7778 10.9441L35.0562 8.22247L23 20.2975L10.9443 8.22247L8.22266 10.9441L20.2979 23L8.22266 35.0558L10.9443 37.7775L23 25.7025L35.0562 37.7775L37.7778 35.0558L25.7026 23L37.7778 10.9441Z" fill="#000000" fill-opacity="1.000000" fill-rule="evenodd"/>
+                        </g>
+                    </svg>                
+                </button>
+            </div>
+            <p class="modal_content_p1">Description:</p>
+            <div class="modal_content_forinput">
+                <textarea id="inputText" class="modal_content_forinput_input" id=""></textarea>
+            </div>
+            <p class="modal_content_p2">Picture:</p>
+            <div class="modal_content_forblock">
+                <div class="modal_content_forblock_block">
+                    <button id="btnAddImg" class="modal_content_forblock_block_btn">
+                        <svg width="101.250000" height="101.250000" viewBox="0 0 101.25 101.25" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <defs/>
+                            <path id="Vector" d="M11.25 101.25C8.15625 101.25 5.50781 100.148 3.30469 97.9453C1.10156 95.7422 0 93.0938 0 90L0 11.25C0 8.15625 1.10156 5.50781 3.30469 3.30469C5.50781 1.10156 8.15625 0 11.25 0L61.875 0L61.875 11.25L11.25 11.25L11.25 90L90 90L90 39.375L101.25 39.375L101.25 90C101.25 93.0938 100.148 95.7422 97.9453 97.9453C95.7422 100.148 93.0938 101.25 90 101.25L11.25 101.25ZM78.75 33.75L78.75 22.5L67.5 22.5L67.5 11.25L78.75 11.25L78.75 0L90 0L90 11.25L101.25 11.25L101.25 22.5L90 22.5L90 33.75L78.75 33.75ZM16.875 78.75L84.375 78.75L63.2812 50.625L46.4062 73.125L33.75 56.25L16.875 78.75Z" fill="#808080" fill-opacity="1.000000" fill-rule="nonzero"/>
+                        </svg>  
+                        <p class="modal_content_forblock_block_btn_p">Add image</p>          
+                    </button>
+                    <button id="btnPost" class="modal_content_forblock_block_btn2">Post</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <header class="header">
         <div class="header_head">
             <a class="header_head_a" href="#">
@@ -34,14 +76,14 @@
             </nav>
             <div class="header_head_forinput">
                 <input class="header_head_forinput_input" type="text">
-                <button class="header_head_forinput_btn">
+                <button id="btnSearch" class="header_head_forinput_btn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
                         <path d="M17.9513 17.9147L23 23M20.6667 11.3333C20.6667 16.488 16.488 20.6667 11.3333 20.6667C6.17867 20.6667 2 16.488 2 11.3333C2 6.17867 6.17867 2 11.3333 2C16.488 2 20.6667 6.17867 20.6667 11.3333Z" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                       </svg>
                 </button>
             </div>
             <a class="header_head_btns" href="#">
-                <p class="header_head_btns_username">UserName</p>
+                <p id="userName" class="header_head_btns_username">UserName</p>
                 <img src="./src/img/download 2.png" alt="profie">
             </a>
         </div>
@@ -67,37 +109,30 @@
                     </svg>           
                 </button>
             </div>
-            <div class="main_block2_forms">
-                <div class="main_block2_forms_ms">
-                    <div class="main_block2_forms_ms_user">
-                        <img src="./src/img/download 2.png" alt="userlogo">
-                        <p class="main_block2_forms_ms_user_nickname">UserName</p>
-                    </div>
-                    <div class="main_block2_forms_ms_forcom">
-                        <div class="main_block2_forms_ms_forcom_com">
-                            <p class="main_block2_forms_ms_forcom_com_text">What do you thinking about this thing? i'm really angry about that what do you thinking about this thing, i'm really angry about that</p>
-                        </div>
-                    </div>
-                    <div class="main_block2_forms_ms_forlikes">
-                        <div class="main_block2_forms_ms_forlikes_likes">
-                            <p class="main_block2_forms_ms_forlikes_likes_dislp">0</p>
-                            <button class="main_block2_forms_ms_forlikes_likes_dislbtn">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M4.00008 1.99999L10.6667 1.99999L10.6667 10.6667L6.00008 15.3333L5.16675 14.5C5.08897 14.4222 5.02508 14.3167 4.97508 14.1833C4.92508 14.05 4.90008 13.9222 4.90008 13.8L4.90008 13.5667L5.63341 10.6667L2.00008 10.6667C1.64453 10.6667 1.33342 10.5333 1.06675 10.2667C0.800082 10 0.666749 9.68888 0.666748 9.33333L0.666748 8C0.666748 7.92222 0.675082 7.83888 0.691748 7.75C0.708415 7.66111 0.733415 7.57777 0.766748 7.5L2.76675 2.79999C2.86675 2.57777 3.03341 2.38888 3.26675 2.23333C3.50008 2.07777 3.74453 1.99999 4.00008 1.99999ZM12.0001 10.6667L12.0001 1.99999L14.6667 1.99999L14.6667 10.6667L12.0001 10.6667Z" fill="#6F0808"/>
-                                </svg>
-                            </button>
-                            <p class="main_block2_forms_ms_forlikes_likes_likep">0</p>
-                            <button class="main_block2_forms_ms_forlikes_likes_likebtn">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
-                                    <path d="M11.25 13.125H5V5L9.375 0.625L10.1562 1.40625C10.2292 1.47917 10.2891 1.57812 10.3359 1.70312C10.3828 1.82812 10.4062 1.94792 10.4062 2.0625V2.28125L9.71875 5H13.125C13.4583 5 13.75 5.125 14 5.375C14.25 5.625 14.375 5.91667 14.375 6.25V7.5C14.375 7.57292 14.3672 7.65104 14.3516 7.73438C14.3359 7.81771 14.3125 7.89583 14.2812 7.96875L12.4062 12.375C12.3125 12.5833 12.1562 12.7604 11.9375 12.9062C11.7188 13.0521 11.4896 13.125 11.25 13.125ZM3.75 5V13.125H1.25V5H3.75Z" fill="#00482E"/>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+            <div id="blockPost"  class="main_block2_forpost">
+                
             </div>
         </div>
     </main>
+    <div class="forbtnadd">
+        <button id="btnAdd" class="forbtnadd_btnadd">
+            <svg xmlns="http://www.w3.org/2000/svg" width="84" height="82" viewBox="0 0 84 82" fill="none">
+                <rect width="83.6112" height="81.8066" rx="40.9033" fill="url(#paint0_linear_34_21)"/>
+                <rect x="40.0847" y="25.1089" width="4.11395" height="32.3974" transform="rotate(0.0852107 40.0847 25.1089)" fill="white"/>
+                <rect x="40.0847" y="25.1089" width="4.11395" height="32.3974" transform="rotate(0.0852107 40.0847 25.1089)" fill="white"/>
+                <rect x="40.0847" y="25.1089" width="4.11395" height="32.3974" transform="rotate(0.0852107 40.0847 25.1089)" fill="white"/>
+                <rect x="25.9189" y="43.3676" width="4.11395" height="32.3974" transform="rotate(-90 25.9189 43.3676)" fill="white"/>
+                <rect x="25.9189" y="43.3676" width="4.11395" height="32.3974" transform="rotate(-90 25.9189 43.3676)" fill="white"/>
+                <rect x="25.9189" y="43.3676" width="4.11395" height="32.3974" transform="rotate(-90 25.9189 43.3676)" fill="white"/>
+                <defs>
+                  <linearGradient id="paint0_linear_34_21" x1="-11.0654" y1="-3.90542" x2="124.323" y2="184.857" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#39B78A"/>
+                    <stop offset="1" stop-color="#39B78A" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+            </svg>
+        </button>
+    </div>
     <script src="./dist/main.bundle.js"></script>
 </body>
 </html>
