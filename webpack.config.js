@@ -8,6 +8,7 @@ module.exports = {
     welcome: './welcome.js',
     reg: './reg.js',
     profile: './profile.js',
+    sesting: './sesting.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
