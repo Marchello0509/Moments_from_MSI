@@ -1,0 +1,61 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.main_cardSettings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 648px;
+  height: 96vh;
+  border: 2px solid #000;
+  border-radius: 7px;
+  row-gap: 40px;
+}
+.main_cardSettings_header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 58px;
+}
+.main_cardSettings_header_columnLeft {
+  display: flex;
+  width: 264px;
+  height: 70px;
+  align-items: center;
+  -moz-column-gap: 28px;
+       column-gap: 28px;
+}
+.main_cardSettings_header_columnLeft_title {
+  font-family: "Overpass Mono", monospace;
+  font-weight: 500;
+  font-size: 33px;
+}
+.main_cardSettings_header_btnClose {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+.main_cardSettings_btn {
+  width: 570px;
+  height: 86px;
+  border: 2px solid #777;
+  border-radius: 10px;
+  background: none;
+  cursor: pointer;
+  font-family: "Overpass Mono", monospace;
+  font-weight: 400;
+  font-size: 33px;
+}
+.main_cardSettings_SaveButton {
+  width: 120px;
+}
+
+.test {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: rgba(82, 78, 78, 0.199);
+}/*# sourceMappingURL=style.css.map */

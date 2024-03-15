@@ -1,0 +1,156 @@
+@mixin FlexElement($justify, $align) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin ForBlocks ($justify) {
+    display: flex;
+    justify-content: $justify;
+}
+
+
+body {
+    background: url("../img/D992TWdWkAEbgci.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main {
+    @include FlexElement(center,center);
+    width: 100%;
+    height: 100vh;
+    fill: rgba(161, 161, 161, 0.1);
+    stroke-width: 1px;
+    stroke: rgba(255, 255, 255, 0.23);
+    filter: drop-shadow(0px 4px 4px rgba(255, 255, 255, 0.25));
+    backdrop-filter: blur(7px);
+    &_block {
+        width: 473px;
+        height: 306px;
+        background: rgba(160, 159, 159, 0.55);
+        border-radius: 5px;
+        &_logo {
+            display: flex;
+            column-gap: 7px;
+            margin-top: 7px;
+            margin-left: 7px;
+            &_texts {
+                &_p1 {
+                    color: #000;
+                    font-family: "Overpass Mono";
+                    font-size: 15px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                }
+                &_p2 {
+                    color: #000;
+                    font-family: "Overpass Mono";
+                    font-size: 25px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                }
+            }
+        }
+        &_forbl1 {
+            @include ForBlocks(center);
+            margin-top: 11px;
+            &_bl {
+                width: 308px;
+                height: 53px;
+                &_p {
+                    color: #000;
+                    font-family: "Overpass Mono";
+                    font-size: 15px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;               
+                }
+                &_inp {
+                    width: 307px;
+                    height: 30px;
+                    border-radius: 2px;
+                    border: 0.5px solid #000;
+                    background: #FCFCFC;
+                    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);     
+                    outline: none; 
+                    font-family: "Overpass Mono";  
+                }
+            }
+        }
+        &_forbl2 {
+            @include ForBlocks(center);
+            margin-top: 7px;
+            &_bl {
+                width: 308px;
+                height: 53px;
+                &_p {
+                    color: #000;
+                    font-family: "Overpass Mono";
+                    font-size: 15px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;               
+                }
+                &_inp {
+                    width: 307px;
+                    height: 30px;
+                    border-radius: 2px;
+                    border: 0.5px solid #000;
+                    background: #FCFCFC;
+                    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);     
+                    outline: none; 
+                    font-family: "Overpass Mono";  
+                }
+            }
+        }
+        &_forbtn1 {
+            @include ForBlocks(center);       
+            margin-top: 12px;
+            &_btn {
+                width: 307px;
+                height: 31px;
+                border-radius: 2px;
+                background: #9D9D9D;
+                color: #FFF;
+                font-family: "Overpass Mono";
+                font-size: 15px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                border: none;
+                cursor: pointer;
+                transition-duration: 0.6s;
+                &:hover {
+                    background: #12A921;
+                    transition-duration: 0.6s;
+                }
+            }
+        }
+        &_forbtn2 {
+            @include ForBlocks(center);       
+            margin-top: 6px;
+            &_btn {
+                width: 307px;
+                height: 31px;
+                border-radius: 2px;
+                background: #9D9D9D;
+                color: #FFF;
+                font-family: "Overpass Mono";
+                font-size: 15px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                border: none;
+                cursor: pointer;
+                transition-duration: 0.6s;
+                &:hover {
+                    background: #12A921;
+                    transition-duration: 0.6s;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header_logo">
+            <p class="header_logo_p1">Project Name</p>
+        </div>
+        
+        <div class="header_nav">
+            <nav class="header_nav_select">
+                <p class="header_nav_select_p1">posts</p>
+                <p class="header_nav_select_p1">new</p>
+                <p class="header_nav_select_p1">today</p>
+            </nav>
+            <div class="header_nav_search">
+                <input class="header_nav_search_input" type="text" placeholder="Search">
+                <div class="header_nav_search_btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                        <path d="M17.9513 17.9147L23 23M20.6667 11.3333C20.6667 16.488 16.488 20.6667 11.3333 20.6667C6.17867 20.6667 2 16.488 2 11.3333C2 6.17867 6.17867 2 11.3333 2C16.488 2 20.6667 6.17867 20.6667 11.3333Z" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="header_profile">
+            <p class="header_profile_p1">User Name</p>
+            <div class="header_profile_user">
+                <img src="./src/img/download 2.png" alt="">
+                <div class="header_profile_user_index">
+                    <p class="header_profile_user_index_p1">2</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main">
+        <nav class="main_navigation">
+            <div class="main_navigation_item">
+                <p class="main_navigation_item_p1">Home</p>
+                <div class="main_navigation_item_line"></div>
+            </div>
+            <div class="main_navigation_item">
+                <p class="main_navigation_item_p1">Notifications</p>
+            </div>
+            <div class="main_navigation_item">
+                <p class="main_navigation_item_p1">Channels</p>
+            </div>
+            <div class="main_navigation_item">
+                <p class="main_navigation_item_p1">Settings</p>
+            </div>
+        </nav>
+        <div class="main_board">
+            <div id="dialog" class="dialog none">
+                <div class="dialog_block">
+                    <div class="dialog_block_top">
+                        <p class="dialog_block_top_p1">Add post</p>
+                        <div id="cross" class="dialog_block_top_cross">
+                            <img src="./src/svg/cross.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="dialog_block_middle">
+                        <p class="dialog_block_middle_p1">Text</p>
+                        <textarea class="dialog_block_middle_text" placeholder="descripions"></textarea>
+                    </div>
+                    <div class="dialog_block_middle">
+                        <p class="dialog_block_middle_p1">Picture</p>
+                        <div class="dialog_block_middle_board">
+                            <div class="dialog_block_middle_board_photo"></div>
+                            <div class="dialog_block_middle_board_post">
+                                <p class="dialog_block_middle_board_post_p1">Post</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main_board_title">
+                <p class="main_board_title_p1">My posts</p>
+            </div>
+            <div id="placePosts" class="main_board_place">
+                <div class="main_board_place_item">
+                    <div class="main_board_place_item_info">
+                        <p class="main_board_place_item_info_p1">Tysiachuk Igor</p>
+                    </div>
+                    <div class="main_board_place_item_data">
+                        <p class="main_board_place_item_data_p1">What do you thinking about this thing? i’m really angry about that what do you thinking about this thing, i’m really angry about that What do you thinking about this thing? i’m really angry about that what do you thinking about this thing, i’m really angry about that</p>
+                    </div>
+                    <div class="main_board_place_item_adding">
+                        <div class="main_board_place_item_adding_rate">
+                            <div class="main_board_place_item_adding_rate_like">
+                                <p class="main_board_place_item_adding_rate_like_p1 redPoint">123</p>
+                                <div class="main_board_place_item_adding_rate_like_block redBorder">
+                                    <img src="./src/svg/thumb_down.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="main_board_place_item_adding_rate_like">
+                                <p class="main_board_place_item_adding_rate_like_p1">123</p>
+                                <div class="main_board_place_item_adding_rate_like_block">
+                                    <img src="./src/svg/thumb_up.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="addBtn" class="main_addBtn">
+            <img src="./src/svg/plus.svg" alt="">
+        </div>
+    </div>
+    <script src="./dist/profile.bundle.js"></script>
+</body>
+</html>
