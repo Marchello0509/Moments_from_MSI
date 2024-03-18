@@ -1,51 +1,16 @@
-import "./src/scss/reg.js"
-
+import "./src/scss/reg.js";
+import axios from "axios";
 const inputs={
-    name:document.querySelector("#nameInput"),
-    email:document.querySelector("#EmailInput"),
-    password:document.querySelector("#PasswordInput"),
+    emailInputs:document.querySelector("#EmailInput"),
+    passwordInput:document.querySelector("#PasswordInput"),
     repassword:document.querySelector('#Re-enterPassword'),
-    errorInput:document.querySelector('#error')
+    errorInput:document.querySelector(`#error`),
+    loginInput:document.querySelector(`#LoginInput`)
 }
 const SingUpButton=document.querySelector("#SingUp");
-let users=[
-    {
-        name:'Fsdfsrgd1',
-        email:'gergrg4egrdfgd1',
-        password:'gretgrfhfr245341'
-    },
-    {
-        name:'Fsdfsrgd2',
-        email:'gergrg4egrdfgd2',
-        password:'gretgrfhfr245342'
-    },
-    {
-        name:'Fsdfsrgd3',
-        email:'gergrg4egrdfgd3',
-        password:'gretgrfhfr245343'
-    }, {
-        name:'Fsdfsrgd4',
-        email:'gergrg4egrdfgd4',
-        password:'gretgrfhfr245344'
-    }
-]
-
-const CheckPassword=(password,repassword)=>{
-    if(password == repassword){
-        return true;
-    }else{
-        return false;
-    }
-}
 SingUpButton.addEventListener("click",()=>{
     let succcsesfull=true;
     let ParamNow="";
-    const candidate={
-            name:inputs.name.value,
-            email:inputs.email.value,
-            password:inputs.password.value,
-            repassword:inputs.repassword.value
-        }
     console.log(candidate)
     for(const param in candidate){
         if(candidate[param].length == 0){
@@ -54,7 +19,7 @@ SingUpButton.addEventListener("click",()=>{
         }
     }
     if(!succcsesfull){
-        inputs.errorInput.innerHTML=`Param ${ParamNow} gas been inccorect`
+        inputs.errorInput.innerHTML=`Param ${ParamNow} has been inccorect`
     } else{
         const checkPassword = candidate.password == candidate.repassword;
         if(!checkPassword){
@@ -63,23 +28,22 @@ SingUpButton.addEventListener("click",()=>{
             let isInclude = false
             users.forEach((person)=>{
                 if (person.email==candidate.email){
-                    isInclude = true
+                    isInclude = true 
                 }
             }) 
             if(isInclude){
                 inputs.errorInput.innerHTML='Check your email'
             } else{
-                users=[
-                    ...users,
-                    {
-                        name:candidate.name,
-                        email:candidate.email,
-                        password:candidate.password,
-                    },
-                ];
+                axios.post("http://localhost:4000/user/create",{
+                    login:inputs.loginInput.value,
+                    password:inputs.passwordInput.value,
+                    email:inputs.emailInputs.value,
+                    name:inputs.nameInput.value
+                }).then((res)=>{
+                    localStorage.setItem("Token",userToken)
+                    window.location.href=`/login.html`
+                })
             }
         }
     }
-    
-    console.log(users)
 });

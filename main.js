@@ -1,5 +1,6 @@
 import "./src/scss/main.js"
 import './src/js/post.js'
+import "/reg.js"
 
 const mainEl = {
     btnSearch: document.querySelector('#btnSearch'),
