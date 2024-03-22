@@ -13,6 +13,8 @@ const mainEl = {
 
 console.log(mainEl)
 
+const token = localStorage.getItem("userToken")
+
 let postArr = []
 
 const renderCom = (arr) => {
@@ -103,12 +105,14 @@ const renderPost = () => {
             cPlus: document.querySelectorAll("#plusText")
         }
     }
-    axios.post(`http://localhost:4000/posts/create`/ {
+    const likesData = {
+        likesCount: cPost.cLikes.cPlus.length,
+        dislikesCount: cPost.cLikes.cDis.length
+    }
+    axios.post(`http://localhost:4000/posts/create`, {
         token: localStorage.getItem("userToken"),
         text: cPost.cText,
-        likes: {
-            ...cLikes
-        }
+        likes: likesData 
     })
     .then((res) => {
         console.log(res.data)
