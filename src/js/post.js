@@ -1,3 +1,5 @@
+import axios from "axios"
+
 const mainEl = {
     btnAdd: document.querySelector('#btnAdd'),
     modal: document.querySelector('#modal'),
@@ -14,9 +16,12 @@ console.log(mainEl)
 let postArr = []
 
 const renderCom = (arr) => {
-    mainEl.blockPost.innerHTML = ''
-    arr.forEach((item) => {
-        mainEl.blockPost.innerHTML += `
+    axios
+    .get(`http://localhost:4000/posts/list?token=${token}`)
+    .then((res) => {
+        mainEl.blockPost.innerHTML = ''
+        res.data.forEach((item) => {
+            mainEl.blockPost.innerHTML += `
                 <div idPost = "${item.id}" class="main_block2_forpost_forms">
                     <div class="main_block2_forpost_forms_ms">
                         <div class="main_block2_forpost_forms_ms_user">
@@ -47,32 +52,33 @@ const renderCom = (arr) => {
                     </div>
                 </div>
             </div>       
-        `    
-    })
-    const disBtn = document.querySelectorAll('#disBtn')
-    const plusBtn = document.querySelectorAll('#plusBtn')
-    disBtn.forEach(btnDis => {
-        btnDis.addEventListener("click", () => {
-            const idCandidate = btnDis.getAttribute("idPost")
-            const newList = postArr.map(mapItem => {
-                if (mapItem.id == idCandidate) {
-                    mapItem.count -= 1
-                }
-                return mapItem
-            })
-            renderCom(newList)
+            `    
         })
-    })
-    plusBtn.forEach(plusBtn => {
-        plusBtn.addEventListener("click", ( )=> {
-            const idCandidate = plusBtn.getAttribute("idPost")
-            const newList = postArr.map(mapItem => {
-                if (mapItem.id == idCandidate) {
-                    mapItem.pluscount += 1
-                }
-                return mapItem
+        const disBtn = document.querySelectorAll('#disBtn')
+        const plusBtn = document.querySelectorAll('#plusBtn')
+        disBtn.forEach(btnDis => {
+            btnDis.addEventListener("click", () => {
+                const idCandidate = btnDis.getAttribute("idPost")
+                const newList = postArr.map(mapItem => {
+                    if (mapItem.id == idCandidate) {
+                        mapItem.count -= 1
+                    }
+                    return mapItem
+                })
+                renderCom(newList)
             })
-            renderCom(newList)
+        })
+        plusBtn.forEach(plusBtn => {
+            plusBtn.addEventListener("click", ( )=> {
+                const idCandidate = plusBtn.getAttribute("idPost")
+                const newList = postArr.map(mapItem => {
+                    if (mapItem.id == idCandidate) {
+                        mapItem.pluscount += 1
+                    }
+                    return mapItem
+                })
+                renderCom(newList)
+            })
         })
     })
 }
@@ -89,17 +95,29 @@ mainEl.btnAddImg.addEventListener('click', () => {
     alert('Coming soon')
 })
 
-mainEl.btnPost.addEventListener('click', () => {
-    postArr = [
-        ...postArr,
-        {
-            id: postArr.length === 0 ? 1 : postArr[postArr.length - 1].id + 1,
-            count: 0,
-            pluscount: 0,
-            text: mainEl.inputText.value
+const renderPost = () => {
+    const cPost = {
+        cText: mainEl.inputText,
+        cLikes: {
+            cDis: document.querySelectorAll("#disText"),
+            cPlus: document.querySelectorAll("#plusText")
         }
-    ]
-    console.log(postArr)
-    mainEl.inputText.value = ""
-    renderCom(postArr)
+    }
+    axios.post(`http://localhost:4000/posts/create`/ {
+        token: localStorage.getItem("userToken"),
+        text: cPost.cText,
+        likes: {
+            ...cLikes
+        }
+    })
+    .then((res) => {
+        console.log(res.data)
+        renderCom()
+    })
+}
+
+mainEl.btnPost.addEventListener('click', () => {
+    renderPost()
+    // mainEl.inputText.value = ""
+    // renderCom(postArr)
 })
