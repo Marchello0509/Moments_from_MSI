@@ -1,26 +1,51 @@
 import "./src/scss/sesting"
 
-const password=document.querySelector('#changePasswword');
-const email=document.querySelector('#changeEmail');
-const avatar=document.querySelector('#changeAvatar');
-const container=document.querySelector('#cardsettings')
-password.addEventListener('click',()=>{
+const passwordbtn=document.querySelector('#changePasswword');
+const emailBtn=document.querySelector('#changeEmail');
+const login=document.querySelector('#changeLogin');
+const container=document.querySelector('#cardsettings');
+const token=localStorage.getItem('Token')
+passwordbtn.addEventListener('click',()=>{
     container.innerHTML+=`
     <input type="password" placeholder="Enter your current password">
-    <input type="password" placeholder="Enter your new password">
-    <button class="main_cardSettings_SaveButton">Save</button>
+    <input type="password" placeholder="Enter your new password" id="PasswordInput">
+    <button class="main_cardSettings_SaveButton" id="SavePassword">Save</button>
     `
+    const SavePasswordBtn=document.querySelector('SavePassword');
+    const passwordInput=document.querySelector("#PasswordInput")
+    SavePasswordBtn.addEventListener("click",()=>{
+        axios.get(`http://localhost:4000/user/edit?token=${token}`,{
+            password:passwordInput.value
+        })
+        window.location.href='/profile.html'
+    })
 });
-email.addEventListener('click',()=>{
+emailBtn.addEventListener('click',()=>{
     container.innerHTML+=`
     <input type="text" placeholder="Enter your current email">
-    <input type="password" placeholder="Enter your new email">
-    <button class="main_cardSettings_SaveButton">Save</button>
+    <input type="text" placeholder="Enter your new email" id="EmailInput">
+    <button class="main_cardSettings_SaveButton" id="SaveEmail">Save</button>
     `
+    const SaveEmailBtn=document.querySelector("#SaveEmail");
+    const email=document.querySelector("#EmailInput")
+    SaveEmailBtn.addEventListener("click",()=>{
+        axios.get(`http://localhost:4000/user/edit?token=${token}`,{
+            email:email.value
+        })
+        window.location.href='/profile.html'
+    })
 });
-avatar.addEventListener('click',()=>{
+login.addEventListener('click',()=>{
     container.innerHTML+=`
-    <div class="test"></div>
-    <button class="main_cardSettings_SaveButton">Save</button>
+    <input type="text" placeholder="Enter your new login" id="LoginInput">
+    <button class="main_cardSettings_SaveButton" id="SaveLogin">Save</button>
     `
+    const SaveLoinBtn=document.querySelector("#SaveLogin")
+    const LoginInput=document.querySelector("#LoginInput")
+    SaveLoinBtn.addEventListener("click",()=>{
+        axios.get(`http://localhost:4000/user/edit?token=${token}`,{
+            login:LoginInput.value
+        })
+        window.location.href='/profile.html'
+    })
 })

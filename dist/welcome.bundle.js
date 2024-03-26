@@ -156,7 +156,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _res
   \********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _src_scss_welcome_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/scss/welcome.js */ \"./src/scss/welcome.js\");\n\r\n\r\nconst singUpButton=document.querySelector('#SignUp');\r\nsingUpButton.addEventListener('click',()=>{\r\n    window.location.href = './'\r\n})\n\n//# sourceURL=webpack://moments_from_msi/./welcome.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _src_scss_welcome_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/scss/welcome.js */ \"./src/scss/welcome.js\");\n\r\n\r\nconst singUpButton=document.querySelector('#SignUp');\r\nconst signInButton=document.querySelector('#SignIn')\r\nsingUpButton.addEventListener('click',()=>{\r\n    window.location.href = '/reg.html'\r\n})\r\nsignInButton.addEventListener('click',()=>{\r\n    window.location.href = '/login.html'\r\n})\r\n\n\n//# sourceURL=webpack://moments_from_msi/./welcome.js?");
 
 /***/ }),
 
