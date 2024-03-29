@@ -1,8 +1,7 @@
 .main {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 .main_cardSettings {
   display: flex;
@@ -10,9 +9,9 @@
   align-items: center;
   width: 648px;
   height: 96vh;
-  border: 2px solid #000;
   border-radius: 7px;
   row-gap: 40px;
+  border: solid 3px black;
 }
 .main_cardSettings_header {
   display: flex;
@@ -38,6 +37,10 @@
   border: none;
   background: none;
 }
+.main_cardSettings_header_closeBtn {
+  border: none;
+  cursor: pointer;
+}
 .main_cardSettings_btn {
   width: 570px;
   height: 86px;
@@ -58,4 +61,4 @@
   height: 90px;
   border-radius: 50%;
   background: rgba(82, 78, 78, 0.199);
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=sesting.css.map */

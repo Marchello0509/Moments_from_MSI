@@ -4,10 +4,10 @@ const passwordbtn=document.querySelector('#changePasswword');
 const emailBtn=document.querySelector('#changeEmail');
 const login=document.querySelector('#changeLogin');
 const container=document.querySelector('#cardsettings');
-const token=localStorage.getItem('Token')
+const token=localStorage.getItem('Token');
+const closeBtn=document.querySelector('#close')
 passwordbtn.addEventListener('click',()=>{
     container.innerHTML+=`
-    <input type="password" placeholder="Enter your current password">
     <input type="password" placeholder="Enter your new password" id="PasswordInput">
     <button class="main_cardSettings_SaveButton" id="SavePassword">Save</button>
     `
@@ -22,7 +22,6 @@ passwordbtn.addEventListener('click',()=>{
 });
 emailBtn.addEventListener('click',()=>{
     container.innerHTML+=`
-    <input type="text" placeholder="Enter your current email">
     <input type="text" placeholder="Enter your new email" id="EmailInput">
     <button class="main_cardSettings_SaveButton" id="SaveEmail">Save</button>
     `
@@ -48,4 +47,7 @@ login.addEventListener('click',()=>{
         })
         window.location.href='/profile.html'
     })
+})
+closeBtn.addEventListener('click',()=>{
+    window.location.href='/profile.html'
 })

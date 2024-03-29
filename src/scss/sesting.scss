@@ -19,6 +19,7 @@
         height: 96vh;
         border-radius: 7px;
         row-gap: 40px;
+        border: solid 3px black;
         &_header{
             display: flex;
             justify-content: space-between;
@@ -40,6 +41,10 @@
                 cursor: pointer;
                 border: none;
                 background: none;
+            }
+            &_closeBtn{
+                border: none;
+                cursor: pointer;
             }
         }
         &_btn{
