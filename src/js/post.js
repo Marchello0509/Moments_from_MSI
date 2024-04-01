@@ -99,20 +99,12 @@ mainEl.btnAddImg.addEventListener('click', () => {
 
 const renderPost = () => {
     const cPost = {
-        cText: mainEl.inputText,
-        cLikes: {
-            cDis: document.querySelectorAll("#disText"),
-            cPlus: document.querySelectorAll("#plusText")
-        }
-    }
-    const likesData = {
-        likesCount: cPost.cLikes.cPlus.length,
-        dislikesCount: cPost.cLikes.cDis.length
+        cText: mainEl.inputText.value,
     }
     axios.post(`http://localhost:4000/posts/create`, {
         token: localStorage.getItem("userToken"),
+        title: "",
         text: cPost.cText,
-        likes: likesData 
     })
     .then((res) => {
         console.log(res.data)
