@@ -3,6 +3,7 @@ import "./src/scss/style.js"
 const loginEl = {
     btnLog: document.querySelector('#btnLog'),
     btnReg: document.querySelector('#btnReg'),
+    btnRestore:document.querySelector('#btnRestore'),
     inpEm: document.querySelector('#inpEm'),
     inpPass: document.querySelector('#inpPass'),
 }
@@ -14,7 +15,6 @@ let dataBase = [
     }
 ]
 
-console.log(loginEl)
 
 loginEl.btnLog.addEventListener('click', () => {
     let inp1 = loginEl.inpEm.value
@@ -38,4 +38,8 @@ loginEl.btnLog.addEventListener('click', () => {
 
 loginEl.btnReg.addEventListener('click', () => {
     window.location.href = './reg.html'
+})
+loginEl.btnRestore.addEventListener('click',()=>{
+    window.location.href='/restore.html'
+
 })

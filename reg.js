@@ -44,7 +44,7 @@ FormEl.signUp.addEventListener("click",()=>{
             name:FormEl.name.value
         }).then((res)=>{
             localStorage.setItem("Token",res.data.userToken)
-            window.location.href=`/profile.html`
+            window.location.href=`/login.html`
         })
     }
 })

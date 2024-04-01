@@ -14,7 +14,6 @@ FormEl.btn.addEventListener('click',()=>{
     }
     axios.put(`http://Localhost:400/user/restore-password?email=${ValueEmail}&password=${ValuePassword}`)
     .then((res)=>{
-        password=ValuePassword
         window.location.href='/login.html'
     })
 })
